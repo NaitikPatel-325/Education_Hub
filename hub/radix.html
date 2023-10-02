@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="bg-gray-200 font-sans">
+
+<div class="max-w-screen-sm mx-auto p-6 mt-12 bg-white rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold text-center">Convert any Number</h1>
+
+    <div class="my-4">
+        <label for="from-select" class="font-bold block mb-1">From:</label>
+        <select id="from-select" name="fromConversionType" class="w-full p-2 border rounded">
+            <option value="Binary">Binary</option>
+            <option value="Octal">Octal</option>
+            <option value="Hexadecimal">Hexadecimal</option>
+            <option value="Decimal">Decimal</option>
+        </select>
+    </div>
+
+    <div class="my-4">
+        <label for="to-select" class="font-bold block mb-1">To:</label>
+        <select id="to-select" name="toConversionType" class="w-full p-2 border rounded">
+            <option value="Binary">Binary</option>
+            <option value="Octal">Octal</option>
+            <option value="Hexadecimal">Hexadecimal</option>
+            <option value="Decimal">Decimal</option>
+        </select>
+    </div>
+
+    <div class="my-4">
+        <label for="from-input" class="font-bold block mb-1">Enter The Number:</label>
+        <input type="text" id="from-input" name="fromInput" placeholder="Binary Number" class="w-full p-2 border rounded">
+    </div>
+
+    <div class="my-4">
+        <label for="to-input" class="font-bold block mb-1">Result:</label>
+        <input type="text" id="to-input" name="toInput" placeholder="Binary Number" class="w-full p-2 border rounded">
+    </div>
+
+    <button type="button" id="convert-button" class="w-full p-2 bg-blue-500 text-white font-bold rounded cursor-pointer hover:bg-blue-700">Convert It</button>
+
+    <p id="error" class="text-red-500 text-center my-2"></p>
+    <p id="converted-number" class="text-lg text-center mt-4"></p>
+</div>
+
+</body>
+</html>
