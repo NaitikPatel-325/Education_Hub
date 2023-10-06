@@ -135,14 +135,19 @@
       for (let column of distinctAlphabets) {
         const headerCell = document.createElement('th');
         headerCell.textContent = column;
+        headerCell.className = "px-10"
         headerRow.appendChild(headerCell);
+
       }
       table.appendChild(headerRow);
 
       // Add an additional column header for the result/answer
       const resultHeaderCell = document.createElement('th');
+
       resultHeaderCell.textContent = "Result";
+      resultHeaderCell.className = "text-blue-300 px-10 border-3 border-blue-500 text-blue-400 "
       headerRow.appendChild(resultHeaderCell);
+      headerRow.className = "m-3 border-2 p-2 text-blue-400 border-blue-500"
 
       table.appendChild(headerRow);
 
@@ -175,6 +180,7 @@
             temp += binaryArray[i][j] ;
             cell.textContent = binaryArray[i][j];
           }
+          cell.className = "border-2 border-double border-blue-500"
           row.appendChild(cell);
           
         }
