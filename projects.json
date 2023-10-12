@@ -13,5 +13,10 @@
         "name": "Truth Table Generator",
         "url": "TruthTable-Generator" ,
         "imgUrl" : "/Assets/screenshots/truthtable.png"
+    },
+    {
+        "name": "Bubble Sort Visulizer",
+        "url": "Bubble_Sort_visulizer" ,
+        "imgUrl" : "/Assets/screenshots/truthtable.png"
     }
 ]
