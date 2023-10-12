@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             data.forEach(project => {
                 const newElement = document.createElement('div');
-                newElement.innerHTML = `<div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                newElement.innerHTML = `<div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 h-[400px] w-[600px]">
+                
+                <img src = "${project.imgUrl}" class="h-48 mb-4 block mx-auto"/>                 
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     ${project.name}
                 </h5>
@@ -18,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                     </svg>
+
             </button>                
             </div>`
 

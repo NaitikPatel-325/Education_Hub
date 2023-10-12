@@ -1,14 +1,17 @@
 [
     {
         "name": "Radix Numbers System",
-        "url": "Radix-Numbers"
+        "url": "Radix-Numbers" ,
+        "imgUrl" : "/Assets/screenshots/radix.png"
     },
     {
         "name": "ODE Solving Numerical Methods",
-        "url": "Numerical-Methods"
+        "url": "Numerical-Methods" ,
+        "imgUrl" : "/Assets/screenshots/nmethods.png"
     },
     {
         "name": "Truth Table Generator",
-        "url": "TruthTable-Generator" 
+        "url": "TruthTable-Generator" ,
+        "imgUrl" : "/Assets/screenshots/truthtable.png"
     }
 ]
