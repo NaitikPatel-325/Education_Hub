@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const parentDiv = document.getElementById("project-items");
 
-    fetch("/projects.json")
+    fetch("https://naitikpatel-325.github.io/Education_Hub/projects.json")
         .then(response => response.json())
         .then(data => {
             data.forEach(project => {
