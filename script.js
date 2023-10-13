@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button type="button" class="text-white my-6
                 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 
-                    <a href="Projects/${project.url}">Load More..</a>
+                    <a href="./Projects/${project.url}">Load More..</a>
                     
                     <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
