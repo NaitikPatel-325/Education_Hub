@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Sorting Visualizer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #result {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .array-element {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="script.js"></script>
 </head>
+
 <body class="bg-gray-200 p-4">
     <div class="max-w-lg mx-auto bg-white p-8 rounded shadow-lg mt-10">
         <h1 class="text-3xl font-bold mb-6 text-center">Sorting Visualizer</h1>
         <div class="flex flex-col space-y-4 items-center">
-            <input type="text" placeholder="Enter Numbers separated by commas" id="input" class="w-full p-2 rounded border">
+            <input type="text" placeholder="Enter Numbers separated by commas" id="input"
+                class="w-full p-2 rounded border">
             <div class="flex space-x-4">
-                <button class="w-1/2 bg-blue-500 text-white p-2 rounded cursor-pointer hover:bg-blue-600" onclick="visualizer()">Submit</button>
-                <button class="w-1/2 bg-red-500 text-white p-2 rounded cursor-pointer hover:bg-red-600" onclick="resetInput()">Reset</button>
+                <button class=" bg-blue-500 text-white p-2 rounded cursor-pointer hover:bg-blue-600"
+                    onclick="visualizer()">Submit</button>
+                <button class="bg-red-500 text-white p-2 rounded cursor-pointer hover:bg-red-600"
+                    onclick="resetInput()">Reset</button>
+                <button class=" bg-green-500 text-white p-2 rounded cursor-pointer hover:bg-green-600"
+                    onclick="sortArray()">Bubble Sort</button>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <div id="result">
+    </div>
+
 
 </body>
 
