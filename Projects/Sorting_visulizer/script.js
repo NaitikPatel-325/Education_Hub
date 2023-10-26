@@ -3,10 +3,16 @@ async function sleep(ms) {
 }
 
 async function visualizer() {
-    // var nums = document.getElementById("input").value;
-    // const arr = nums.split(',').map(numStr => parseInt(numStr, 10)); 
+    var nums = document.getElementById("input").value;
 
-    arr = [ 10 , 9 ,8 , 7 , 6] 
+    
+    if( nums === ""){
+        alert("Please enter some values");
+        return;
+    } 
+
+    const arr = nums.split(',').map(numStr => parseInt(numStr, 10)); 
+
 
     var resultContainer = document.getElementById("result");
 
@@ -96,14 +102,14 @@ async function updateVisualizationSelection(arr, n, p ,speed) {
             elementBox.style.backgroundColor = "red";
             gsap.to(elementBox, {
                 duration: speed, 
-                right: -42*(p-n),
+                right: -58*(p-n),
             });
            
         } else if (i == p) {
             elementBox.style.backgroundColor = "red";
             gsap.to(elementBox, {
                 duration: speed,
-                left: -42*(p-n),
+                left: -58*(p-n),
             });
             
         } else {
@@ -128,14 +134,14 @@ async function updateVisualization(arr, n, p ,speed) {
             elementBox.style.backgroundColor = "red";
             gsap.to(elementBox, {
                 duration: speed, 
-                right: "-43px",
+                right: "-57px",
             });
            
         } else if (i == p) {
             elementBox.style.backgroundColor = "red";
             gsap.to(elementBox, {
                 duration: speed,
-                left: "-43px",
+                left: "-57px",
             });
             
         } else {
@@ -148,16 +154,28 @@ async function updateVisualization(arr, n, p ,speed) {
 
 
 async function sortArray() {
-    // var nums = document.getElementById("input").value;
-    // const arr = nums.split(',').map(numStr => parseInt(numStr, 10));
-    // arr = [ 4 , 10 , 3 , ,5 ,1 ,]
+    var nums = document.getElementById("input").value;
+
+    if( nums === ""){
+        alert("Please enter some values");
+        return;
+    }   
+
+    const arr = nums.split(',').map(numStr => parseInt(numStr, 10));
+    // const arr = [5, 4, 3, 2, 1];
     const speed2 = parseFloat(document.getElementById("speed").value); 
 
     // console.log(speed);
 
-    // speed = 1.25 - speed2/100;
-    speed = 2;
+    speed = 1.25 - speed2/100;
+    // speed = 2;
 
+    const option = document.getElementById("option").value;
 
-    await selectionSort(arr,speed);
+    if (option == "bubbleSort"){
+        await bubbleSort    (arr,speed);
+    }
+    else if (option == "selectionSort"){
+        await selectionSort(arr,speed);
+    }
 }

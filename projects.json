@@ -15,8 +15,8 @@
         "imgUrl" : "./Assets/screenshots/truthtable.png"
     },
     {
-        "name": "Bubble Sort Visulizer",
-        "url": "Bubble_Sort_visulizer" ,
-        "imgUrl" : "./Assets/screenshots/truthtable.png"
+        "name": "Sorting Visulizer",
+        "url": "Sorting_visulizer" ,
+        "imgUrl" : "./Assets/screenshots/sorting.png"
     }
 ]

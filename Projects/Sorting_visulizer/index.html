@@ -19,8 +19,12 @@
             margin: 5px;
             margin-top: 20px;
             padding: 10px;
-            border: 1px solid #000;
+            border: 2px solid #000;
             position: relative;
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
         }
     </style>
     <script src="script.js"></script>
@@ -39,8 +43,14 @@
                     onclick="visualizer()">Submit</button>
                 <button class="bg-red-500 text-white p-2 rounded cursor-pointer hover:bg-red-600"
                     onclick="resetInput()">Reset</button>
+                <select class=" bg-blue-500 text-white p-2 rounded cursor-pointer hover:bg-blue-600"
+                        id="option">
+                    <option value="bubbleSort">Bubble Sort</option>    
+                    <option value="selectionSort">Selection Sort</option>    
+                    
+                </select>
                 <button class=" bg-green-500 text-white p-2 rounded cursor-pointer hover:bg-green-600"
-                    onclick="sortArray()">Bubble Sort</button>
+                    onclick="sortArray()">Visulize</button>
             </div>
         </div>
     </div>
