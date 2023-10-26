@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Sorting Visualizer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <style>
         #result {
             display: flex;
@@ -16,8 +17,10 @@
         .array-element {
             display: inline-block;
             margin: 5px;
+            margin-top: 20px;
             padding: 10px;
             border: 1px solid #000;
+            position: relative;
         }
     </style>
     <script src="script.js"></script>
@@ -28,7 +31,9 @@
         <h1 class="text-3xl font-bold mb-6 text-center">Sorting Visualizer</h1>
         <div class="flex flex-col space-y-4 items-center">
             <input type="text" placeholder="Enter Numbers separated by commas" id="input"
-                class="w-full p-2 rounded border">
+            class="w-full p-2 rounded border">
+            <input type="range" id="speed"
+            class="w-full p-2 rounded border">
             <div class="flex space-x-4">
                 <button class=" bg-blue-500 text-white p-2 rounded cursor-pointer hover:bg-blue-600"
                     onclick="visualizer()">Submit</button>

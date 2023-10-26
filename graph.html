@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Graph Visualization</title>
+    <style>
+        .node {
+            fill: white;
+            font-size: 12px;
+        }
+
+        .link {
+            stroke: black;
+            stroke-width: 2px;
+
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- <div class="flex justify-center items-center m-3">
+        <input type="text" id="singleNode" class="p-2 mx-4 border rounded" placeholder="Add Node">
+        <button type="submit" id="addSingleNodeBtn"
+            class=" px-2 py-1 bg-blue-500 text-white font-bold rounded cursor-pointer hover:bg-blue-700">Add Node</button>
+    </div> -->
+    <div class="flex justify-center items-center m-3">
+        <input type="text" id="node1" class="p-2 mx-4 border rounded" placeholder="Node 1">
+        <p> <---> </p>
+        <input type="text" id="node2" class="p-2 mx-4 border rounded" placeholder="Node 2">
+        <button type="submit" id="submitBtn"
+            class=" px-2 py-1 bg-blue-500 text-white font-bold rounded cursor-pointer hover:bg-blue-700">Join Nodes</button>
+        
+    </div>
+
+    <svg width="" height="2000" class="mt-10"></svg>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script>
+        let svg = d3.select("svg");
+        let simulation = null;
+        let adjacencyList = {};
+
+        function makeGraph() {
+            svg.selectAll("*").remove(); 
+
+            simulation = d3.forceSimulation()
+                .force("link", d3.forceLink()
+                    .id(d => d.id)
+                    .distance(120))
+                .force("charge", d3.forceManyBody().strength(-200))
+                .force("center", d3.forceCenter(400, 300))
+                .force("collide", d3.forceCollide(10));
+
+            let nodes = [];
+            let links = [];
+
+            for (let source in adjacencyList) {
+                nodes.push({ id: source });
+                for (let target of adjacencyList[source]) {
+                    links.push({ source, target });
+                }
+            }
+
+            const link = svg.selectAll(".link")
+                .data(links)
+                .enter().append("line")
+                .attr("class", "link");
+
+            const node = svg.selectAll(".node")
+                .data(nodes)
+                .enter().append("g")
+                .attr("class", "node");
+
+            node.append("circle")
+                .attr("r", 18)
+                .style("fill", "blue");
+
+            node.append("text")
+                .attr("dy", ".10em")
+                .text(d => d.id);
+
+            simulation.nodes(nodes)
+                .on("tick", ticked);
+
+            simulation.force("link")
+                .links(links);
+        }
+
+        const submitBtn = document.getElementById("submitBtn");
+
+        submitBtn.addEventListener("click", () => {
+            const node1 = document.getElementById("node1").value;
+            const node2 = document.getElementById("node2").value;
+
+            if (!adjacencyList[node1]) {
+                adjacencyList[node1] = [];
+            }
+            if (!adjacencyList[node2]) {
+                adjacencyList[node2] = [];
+            }
+
+            adjacencyList[node1].push(node2);
+            adjacencyList[node2].push(node1);
+
+            if (simulation) {
+                simulation.stop();
+            }
+
+            makeGraph(); 
+
+            console.log(adjacencyList);
+        });
+
+        function ticked() {
+            svg.selectAll(".link")
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            svg.selectAll(".node")
+                .attr("transform", d => `translate(${d.x},${d.y})`);
+        }
+
+
+    </script>
+</body>
+
+</html>

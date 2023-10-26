@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const parentDiv = document.getElementById("project-items");
 
-    fetch("https://naitikpatel-325.github.io/Education_Hub/projects.json")
+    fetch("./projects.json")
         .then(response => response.json())
         .then(data => {
             data.forEach(project => {
                 const newElement = document.createElement('div');
-                newElement.innerHTML = `<div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 h-[400px] w-[600px]">
+                newElement.innerHTML = `<div class="block m-3 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-[#272a42] dark:border-gray-700 dark:hover:bg-gray-700 h-[400px] w-[600px]">
                 
                 <img src = "${project.imgUrl}" class="h-48 mb-4 block mx-auto"/>                 
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
