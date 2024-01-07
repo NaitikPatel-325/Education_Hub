@@ -8,8 +8,6 @@ Education Hub is an open-source platform for students to collaborate, share educ
 
 - **Project Showcase**: Share and explore diverse educational related projects.
 - **Collaborative Learning**: Collaborate with peers on coding projects.
-- **Community Support**: Engage in discussions and seek help related to project development.
-- **Issues and Discussions**: Report problems, suggest enhancements, and start discussions via GitHub Issues
 
 
 
